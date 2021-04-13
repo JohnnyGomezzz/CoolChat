@@ -5,28 +5,28 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    private ServerSocket server;
-    private Socket socket;
+    private ServerSocket serverSocket;
+    private Socket mySocket;
     private final int PORT = 8189;
 
     public Server() {
         try {
-            server = new ServerSocket(PORT);
-            System.out.println("server started!");
+            serverSocket = new ServerSocket(PORT);
+            System.out.println("Сервер запущен!");
 
             while (true) {
-                socket = server.accept();
-                System.out.println("client connected " + socket.getRemoteSocketAddress());
-                new ClientHandler(this, socket);
+                mySocket = serverSocket.accept();
+                System.out.println("Клиент подключился " + mySocket.getRemoteSocketAddress());
+                new ClientHandler(this, mySocket);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            SQLHandler.disconnect();
-            System.out.println("server closed");
+            //SQLHandler.disconnect();
+            System.out.println("Сервер отключен.");
             try {
-                server.close();
+                serverSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
