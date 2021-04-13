@@ -1,0 +1,32 @@
+#button
+{
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+
+    -fx-background-color: linear-gradient(#5CCDC9, #009B95);
+}
+
+#button: hover
+{
+    -fx-background-color: #5CCDC9;
+}
+
+#button: active
+{
+    -fx-background-color: #ffffff;
+}
+
+#menubar
+{
+    -fx-background-color: linear-gradient(#5CCDC9, #009B95);
+}
+
+#background
+{
+    -fx-background-color: linear-gradient(#ffffff, #cFFFFF);
+}
+
+#contacts
+{
+    -fx-font-weight: bold;
+}
